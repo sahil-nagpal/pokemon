@@ -1,0 +1,225 @@
+.App {
+  text-align: center;
+  font-family: appfont;
+}
+
+@font-face {
+  font-family: "outfit";
+  src: url(../assets/fonts/Outfit-VariableFont_wght.ttf);
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.container-body {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+  row-gap: 5;
+}
+
+.container {
+  border-radius: 20px;
+  height: 30px;
+  box-shadow: #ededdb 0 -1px 10px;
+  padding: 15px;
+  background-color: white;
+}
+
+.show-case-container {
+  width: 50%;
+}
+
+.card-handler {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 3;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  flex-direction: column;
+  flex: 0.5;
+  min-width: 20%;
+  margin: 10px;
+  margin-top: 60px;
+  padding-top: 40px;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.detail-container {
+  width: 320px;
+  margin: 10px;
+  height: 82vh;
+  position: fixed;
+  right: 60px;
+  padding: 0 15px;
+  text-align: center;
+  top: 120px;
+  bottom: 0;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.detail-content {
+  margin-top: 100px;
+}
+
+.text-desc {
+  color: #8F9396;
+  font-weight: 200;
+}
+
+.column-grids {
+  display: flex;
+  padding: 12px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* flex-grow: 1; */
+  -moz-column-gap: 30%;
+       column-gap: 30%;
+}
+
+.tabs div:nth-child(2) {
+  width: 100%;
+  background-color: #F6F8FC;
+  padding: 8px 0;
+  border-radius: 30px;
+  margin: 5px;
+}
+
+.card-handler:hover {
+  border: 2px solid #e0e0e0;
+}
+
+.card-handler:hover .imager img {
+  transform: scale(1.1);
+}
+
+.animatedImage {
+  position: absolute;
+  left: 40%;
+  bottom: 80%;
+}
+
+.animatedImage img {
+  width: 150px;
+  height: 150px;
+}
+
+.imager {
+  position: absolute;
+  left: 30%;
+  bottom: 80%;
+}
+
+.imager img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.2s;
+  transition-duration: 100ms;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.search-barContainer {
+  margin: 30px 10px;
+  position: relative;
+}
+
+.text-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-btn {
+  position: absolute;
+  background-color: #F3B539;
+  border: 0px none;
+  border-radius: 10px;
+  padding: 10px;
+  top: 10px;
+  right: 17px;
+  cursor: pointer;
+  box-shadow: #F3B539 5px 5px 15px;
+}
+
+.highlighted-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.card-css {
+  font-size: 10px;
+  padding: 12px;
+  font-weight: 800;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.search-barContainer input {
+  border: 0px none;
+  padding: 7px;
+  width: 90%;
+}
+
+.search-barContainer input:focus-visible {
+  outline: 0px none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+            animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=App.css.map */
