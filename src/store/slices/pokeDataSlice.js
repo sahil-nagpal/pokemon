@@ -5,7 +5,8 @@ let initialState = {
     "updatedData":[],
     "pokemonObject":{},
     "startLoader":false,
-    "offset":0
+    "offset":0,
+    "mainLoader":false
 } 
 
 const pokeDataSlice = createSlice({
@@ -17,7 +18,8 @@ const pokeDataSlice = createSlice({
                 state.realData = state.realData.concat(action.payload.data)
                 state.updatedData = state.updatedData.concat(action.payload.data)
                 state.offset  += state.updatedData .length
-            }
+                state.mainLoader = false
+            } 
             catch(err){
                 console.log("error in updatePokeData ::: ",err)
             }
@@ -29,6 +31,9 @@ const pokeDataSlice = createSlice({
                 }
                 else if(action.payload.type == 'stop'){
                     state.startLoader = false
+                }
+                else if(action.payload.type="main-loader"){
+                    state.mainLoader = true
                 }
             }
             catch(err){
@@ -68,6 +73,9 @@ const pokeDataSlice = createSlice({
 })
 export const fetchPokeMon = (offset)=>{
     return async (dispatch)=>{
+        if(offset == 0){
+            dispatch(pokeDataSlice.actions.handleLoaderAction({"type":"main-loader"}))
+        }
         let pokemons = await pokeapi.getAllPokemons(offset)
         dispatch(pokeDataSlice.actions.updatePokeData({"data":pokemons}))
     }

@@ -3,7 +3,6 @@ $appColor : #F3B539;
 body{
   background-image :url('../src/assets/image/pokeball-icon.png');
   background-repeat: no-repeat;
-  background-size: cover;
 }
 .App {
   text-align: center;
@@ -12,6 +11,10 @@ body{
 @font-face {
   font-family: "outfit";
   src: url(../assets/fonts/Outfit-VariableFont_wght.ttf);
+}
+.main-loader{
+  text-align: center;
+    margin-top: 30% !important;
 }
 
 .App-logo {

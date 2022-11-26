@@ -1,3 +1,8 @@
+body {
+  background-image: url("../src/assets/image/pokeball-icon.png");
+  background-repeat: no-repeat;
+}
+
 .App {
   text-align: center;
   font-family: appfont;
@@ -7,6 +12,11 @@
   font-family: "outfit";
   src: url(../assets/fonts/Outfit-VariableFont_wght.ttf);
 }
+.main-loader {
+  text-align: center;
+  margin-top: 30% !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -20,6 +30,9 @@
   height: 100%;
   margin-top: 5%;
   row-gap: 5;
+  background-image: url("../src/assets/image/pokeball-icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -77,6 +90,10 @@
 
 .detail-content {
   margin-top: 100px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-desc {
