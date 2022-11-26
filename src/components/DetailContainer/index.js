@@ -10,7 +10,12 @@ const DetailContainer = ()=>{
     let colors = ['#AB549A','#F3B539']
     useEffect(()=>{
         if(Object.keys(pokemonObject).length > 0){
-            setGifUrl(pokemonObject.sprites.versions['generation-v']['black-white']['animated']['front_default'])
+            if(pokemonObject.sprites.versions['generation-v']['black-white']['animated']['front_default']){
+                setGifUrl(pokemonObject.sprites['versions']['generation-v']['black-white']['animated']['front_default'])
+            }
+            else{
+                setGifUrl(pokemonObject.sprites.front_default)
+            }
         }
     },[pokemonObject])
     return <div className="container detail-container">

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Pokedex from 'pokedex-promise-v2';
 let imgurl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
-let allPokemonsApi = "https://pokeapi.co/api/v2/pokemon?limit=10&offset="
+let allPokemonsApi = "https://pokeapi.co/api/v2/pokemon?limit=30&offset="
 let getPokemonDetailUrl = "https://pokeapi.co/api/v2/pokemon/"
 
 const Pokemon = new Pokedex();
@@ -15,7 +15,6 @@ const getAllPokemons = async(offset)=>{
             responseData[i].types = responseForType.data.types.map((item)=>item.type.name)
         }
         pokeDataArr = responseData.map((item,index)=>{return {"_id":index,"name":item.name,"image":imgurl+(item.url.split("/")[item.url.split("/").length-2])+".png","types":item.types}})
-        
     }
     catch(err){
         console.log("error in getAllPokemons")

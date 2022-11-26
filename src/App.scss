@@ -1,5 +1,10 @@
 $appfont : 'outfit';
 $appColor : #F3B539;
+body{
+  background-image :url('../src/assets/image/pokeball-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App {
   text-align: center;
   font-family: appfont;
@@ -21,6 +26,9 @@ $appColor : #F3B539;
   height: 100%;
   margin-top: 5%;
   row-gap: 5;
+  background-image :url('../src/assets/image/pokeball-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container{
   border-radius: 20px;
@@ -70,6 +78,9 @@ $appColor : #F3B539;
 }
 .detail-content{
   margin-top:100px
+}
+.text-center{
+  text-align: center;
 }
 .text-desc{
   color:#8F9396;

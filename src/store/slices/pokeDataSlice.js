@@ -16,8 +16,7 @@ const pokeDataSlice = createSlice({
             try{
                 state.realData = state.realData.concat(action.payload.data)
                 state.updatedData = state.updatedData.concat(action.payload.data)
-                state.offset  += state.updatedData.length
-                console.log(state.offset)
+                state.offset  += state.updatedData .length
             }
             catch(err){
                 console.log("error in updatePokeData ::: ",err)
@@ -69,7 +68,6 @@ const pokeDataSlice = createSlice({
 })
 export const fetchPokeMon = (offset)=>{
     return async (dispatch)=>{
-        console.log("the offset >> ",offset)
         let pokemons = await pokeapi.getAllPokemons(offset)
         dispatch(pokeDataSlice.actions.updatePokeData({"data":pokemons}))
     }
