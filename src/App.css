@@ -279,11 +279,19 @@ body {
 @media only screen and (max-width: 360px) {
   .detail-container {
     right: 5px;
+    height: 100%;
+  }
+  .active {
+    top: 150px !important;
   }
 }
 @media only screen and (min-width: 370px) and (max-width: 375px) {
   .detail-container {
     right: 13px;
+    height: 100%;
+  }
+  .active {
+    top: 20px !important;
   }
 }
 @media only screen and (min-width: 390px) and (max-width: 400px) {
@@ -304,7 +312,7 @@ body {
     margin-right: 53px;
   }
   .active {
-    top: 170px !important;
+    top: 170px;
   }
   .search-barContainer {
     width: 100%;
