@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Pokedex from 'pokedex-promise-v2';
 let imgurl = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
-let allPokemonsApi = "https://pokeapi.co/api/v2/pokemon?limit=30&offset="
+let allPokemonsApi = "https://pokeapi.co/api/v2/pokemon?limit=12&offset="
 let getPokemonDetailUrl = "https://pokeapi.co/api/v2/pokemon/"
 
 const Pokemon = new Pokedex();
