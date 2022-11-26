@@ -30,7 +30,8 @@ $appColor : #F3B539;
   background-color: white;
 }
 .show-case-container{
-  width: 50%;
+  width: 70%;
+  margin-right: 200px;
 }
 .card-handler {
   display: flex;
@@ -47,6 +48,8 @@ $appColor : #F3B539;
   position: relative;
   cursor: pointer;
   border: 2px solid white;
+  max-height: 150px;
+  max-width: 150px;
 }
 .position-relative{
   position: relative;
@@ -56,10 +59,10 @@ $appColor : #F3B539;
   margin: 10px;
   height: 82vh;
   position: fixed;
-  right: 60px;
+  right: 20px;
   padding: 0 15px;
   text-align: center;
-  top:120px;
+  top:175px;
   bottom: 0;
   margin-bottom: 0;
   border-bottom-left-radius: 0;
@@ -77,11 +80,11 @@ $appColor : #F3B539;
   padding: 12px;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* flex-grow: 1; */
-  column-gap: 30%;
 }
-.tabs div:nth-child(2){
-    width: 100%;
+.tabs{
+  width: 50%;
+}
+.tabs div:nth-child(even){
     background-color: #F6F8FC;
     padding: 8px 0;
     border-radius: 30px;
@@ -98,8 +101,8 @@ $appColor : #F3B539;
 }
 .animatedImage{
   position:absolute;
-  left: 40%;
-  bottom: 80%;
+  left: 32%;
+  bottom: 94%;
 }
 .animatedImage img{
   width: 150px;
@@ -108,7 +111,7 @@ $appColor : #F3B539;
 .imager{
   position:absolute;
   left: 30%;
-  bottom: 80%;
+  bottom: 70%;
 }
 .imager img{
   width: 100px;
@@ -129,7 +132,6 @@ $appColor : #F3B539;
 }
 .text-header{
   text-align: center;
-  margin-top:20px
 }
 .search-btn{
   position:absolute;
@@ -146,10 +148,10 @@ $appColor : #F3B539;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top:30px
+  margin-top:10px
 }
 .card-css{
-  font-size: 10px;
+  font-size: 16px;
   padding: 12px;
   font-weight: 800;
   opacity: 0.8;
@@ -161,36 +163,106 @@ $appColor : #F3B539;
   padding: 7px;
   width: 90%;
 }
+.abilities{
+  display: flex;
+  justify-content: space-around;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.lh-500{
+  line-height: 500px;
+}
 .search-barContainer input:focus-visible{
   outline: 0px none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cyllinder-cards{
+  bottom:100px;
   display: flex;
+  justify-content: space-around;
+  
+}
+.position-absolute{
+  position:absolute;
+}
+.cyllinder-outer{
+  background: #F6F8FC;
+  display: flex;
+  padding: 5px;
+  border-radius: 30px;
+  margin: 5px;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.ranks{
+  margin: 6px 0
+}
+.loader-image{
+  margin: auto;
+  width: 100%;
+  line-height: 0 !important;
+  transition: all 0.3s ease;
+}
+.loader-image .rotate-loader{
+  animation: spin 1.5s linear infinite;
+}
+.cyllinder-circle{
+  background-color:#DF2140;
+  border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+@keyframes spin {
+  0%{
+    transform: rotate(350deg)
+  };
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 360px) {
+  .detail-container{
+    right: 5px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (min-width:370px) and (max-width: 375px) {
+  .detail-container{
+    right: 13px;
+  }
+}
+
+@media only screen and  (min-width:390px) and (max-width: 400px) {
+  .detail-container{
+    right: 19px;
+  }
+}
+
+@media only screen and  (min-width:410px) and (max-width: 500px) {
+  .detail-container{
+    right: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card-handler{
+    min-width: 100%;
+  }
+  .show-case-container{
+    margin-right:53px;
+  }
+  .active{
+    top:170px !important
+  }
+  .search-barContainer{
+    width: 100%;
+  }
+  .detail-container{
+    margin: auto;
+    top:10000px;
+    transition: all .3s ease-out;
   }
 }
