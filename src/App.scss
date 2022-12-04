@@ -136,6 +136,7 @@ body{
 .cards-container{
   width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   row-gap: 30px;
 
@@ -215,6 +216,9 @@ body{
 .ranks{
   margin: 6px 0
 }
+.active{
+  top:170px !important
+}
 .loader-image{
   margin: auto;
   width: 100%;
@@ -250,6 +254,9 @@ body{
   .active{
     top:150px !important
   }
+  .cards-container{
+    justify-content: flex-start;
+  }
 }
 
 @media only screen and (min-width:370px) and (max-width: 375px) {
@@ -260,11 +267,17 @@ body{
   .active{
     top:20px !important
   }
+  .cards-container{
+    justify-content: flex-start;
+  }
 }
 
 @media only screen and  (min-width:390px) and (max-width: 400px) {
   .detail-container{
     right: 19px;
+  }
+  .cards-container{
+    justify-content: flex-start;
   }
 }
 
@@ -272,11 +285,18 @@ body{
   .detail-container{
     right: 32px;
   }
+  .cards-container{
+    justify-content: flex-start;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .card-handler{
     min-width: 100%;
+    
+  }
+  .cards-container{
+    justify-content: flex-start;
   }
   .show-case-container{
     margin-right:53px;
@@ -284,6 +304,7 @@ body{
   .active{
     top:170px;
   }
+  
   .search-barContainer{
     width: 100%;
   }
@@ -291,5 +312,33 @@ body{
     margin: auto;
     top:10000px;
     transition: all .3s ease-out;
+  }
+}
+@media only screen and (min-width:1618){
+  .cards-container{
+    column-gap:90px;
+  }
+}
+@media only screen and  (min-width:700px) and (max-width: 1000px) {
+  .detail-container{
+        /* margin: auto; */
+    width: 95%;
+    top: 10000px;
+    right: -6px;
+  }
+  .animatedImage{
+    left: 50%;
+  }
+  .active {
+    top: 126px !important;
+  }
+  .lh-500{
+    line-height: 200px;
+  }
+  .show-case-container{
+    margin-right:0px;
+  }
+  .card-handler{
+    min-width: 38%;
   }
 }
