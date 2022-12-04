@@ -5,12 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import {fetchPokeMon} from '../../store/slices/pokeDataSlice';
 import { pokeActions } from '../../store';
 import DetailContainer from '../../components/DetailContainer';
+import pokeMonLoader from '../../assets/image/pokeball-icon.png';
 
 let refreshPage = true
 const HomePage = ()=>{
     const dispatch = useDispatch()
     let searchRef = useRef()
-    const {offset,updatedData}  = useSelector(state=> state.pokeData)
+    const {offset,scrollLoader}  = useSelector(state=> state.pokeData)
     const [fetchHomie,setFetchHomie] = useState(false)
     const handleNavigation = useCallback((e)=>{
             if (window.scrollY + 100 >= document.documentElement.scrollHeight - document.documentElement.clientHeight){
@@ -22,8 +23,9 @@ const HomePage = ()=>{
     },[offset])
     useEffect(()=>{
         if(fetchHomie){
-
-            dispatch(fetchPokeMon(offset))
+            if(offset <900){
+                dispatch(fetchPokeMon(offset))
+            }
         }
     },[fetchHomie])
     useEffect(()=>{
@@ -44,8 +46,14 @@ const HomePage = ()=>{
                     <div className='cards-container'>
                         {pokemonData.map((data,index)=>{return <Card key={index} name={data.name} image={data.image} types={data.types} ></Card>})}
                     </div>
+                    {scrollLoader && <div className='loader-image scroll-loader'>
+                        <img style={{width:100,height:100}} className={scrollLoader?"rotate-loader":""} src={pokeMonLoader}></img>
+                    </div>}
                 </div>
                 <DetailContainer/>
+                <div>
+               
+                </div>
             </>
             
     </div>
