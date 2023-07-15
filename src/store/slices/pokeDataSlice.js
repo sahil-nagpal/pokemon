@@ -18,7 +18,7 @@ const pokeDataSlice = createSlice({
             try{
                 state.realData = state.realData.concat(action.payload.data)
                 state.updatedData = state.updatedData.concat(action.payload.data)
-                state.offset  += state.updatedData .length
+                state.offset  += state.updatedData.length
                 state.mainLoader = false
                 state.scrollLoader = false
             } 
@@ -78,12 +78,11 @@ const pokeDataSlice = createSlice({
 })
 export const fetchPokeMon = (offset)=>{
     return async (dispatch)=>{
-        if(offset === 0){
-            dispatch(pokeDataSlice.actions.handleLoaderAction({"type":"main-loader"}))
-            let pokemons = await pokeapi.getAllPokemons(offset)
-            dispatch(pokeDataSlice.actions.updatePokeData({"data":pokemons}))
-        }
-        dispatch(pokeDataSlice.actions.handleLoaderAction({"type":"scrollLoader"}))
+        let loaderType = offset === 0 ? "main-loader" : "scrollLoader"
+        dispatch(pokeDataSlice.actions.handleLoaderAction({"type":loaderType}))
+        let pokemons = await pokeapi.getAllPokemons(offset)
+        dispatch(pokeDataSlice.actions.updatePokeData({"data":pokemons}))
+        
     }
 }
 export const fetchSinglePokemon = (name)=>{
